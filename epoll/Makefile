@@ -17,4 +17,4 @@ t_select: t_select.c common_headers
 	gcc -o t_select ./t_select.c -lrtpl -L./
 
 clean:
-	rm -rf t_select librtpl.a
+	rm -rf t_select librtpl.a *.o
