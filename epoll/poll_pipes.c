@@ -25,7 +25,7 @@ main(int argc, char *argv[]) {
   if (pollFd == NULL)
     errExit("malloc");
   for (j = 0; j < numPipes; ++j) {
-    if (pipe(pfds[j] == -1))
+    if (pipe(pfds[j]) == -1)
       errExit("pipe %d", j);
   }
 
@@ -33,7 +33,7 @@ main(int argc, char *argv[]) {
   srand((int)time(NULL));
 
   for (j = 0; j < numWrites; ++j) {
-    randPipe = randm() % numPipes;
+    randPipe = random() % numPipes;
     printf("Writing to fd: %3d (read fd: %3d)\n",
         pfds[randPipe][1], pfds[randPipe][0]);
     if (write(pfds[randPipe][1], "a", 1) == -1) {

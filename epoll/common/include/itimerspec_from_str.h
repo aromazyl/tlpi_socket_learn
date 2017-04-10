@@ -15,6 +15,8 @@
 
 #include <time.h>
 
+#ifndef __APPLE__
 void itimerspecFromStr(char *str, struct itimerspec *tsp);
+#endif
 
 #endif

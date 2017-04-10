@@ -19,6 +19,7 @@
    Optional components that are omitted cause 0 to be assigned to the
    corresponding structure fields. */
 
+#ifndef __APPLE__
 void
 itimerspecFromStr(char *str, struct itimerspec *tsp)
 {
@@ -49,3 +50,4 @@ itimerspecFromStr(char *str, struct itimerspec *tsp)
     }
     free(dupstr);
 }
+#endif
